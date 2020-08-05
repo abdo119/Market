@@ -1,0 +1,21 @@
+<div class="container">
+  <form #f="ngForm" (ngSubmit)="login(f)">
+    <h2 class="text-center">Log in</h2>
+    <input ngModel name="email" #e="ngModel" type="email" class="form-control" placeholder="Your Email" required email>
+    <div class="alert alert-danger" role="alert" *ngIf="e.errors?.required&&e.touched">
+      email is required
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="e.touched&&e.errors?.email">
+      Email must contain @example.com
+    </div>
+    <input ngModel name="password" #p="ngModel"  type="password" class="form-control" placeholder="Password" minlength="6" required>
+    <div class="alert alert-danger" role="alert" *ngIf="p.invalid&&p.touched">
+      Password is required
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    <div class="alert alert-danger" *ngIf="eM">
+      {{this.eM}}
+    </div>
+  </form>
+
+</div>

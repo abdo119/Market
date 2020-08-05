@@ -1,0 +1,13 @@
+.activee{
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 5px;
+}
+.bg-light {
+  background-color:rgb(95, 100, 104)!important;
+}
+.navbar-light .navbar-nav .nav-link{
+  color:#FFFFFF ;
+}.navbar-light .navbar-brand {
+color: #FFFFFF
+}
+

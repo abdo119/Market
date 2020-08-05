@@ -1,0 +1,17 @@
+.card-img, .card-img-top {
+  height: 300px;
+}
+.col-lg-3 {
+  margin-right: 60px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+.row{
+  margin-top: 100px;
+  margin-left: 120px;
+}
+.card{
+  border: none;
+}

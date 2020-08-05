@@ -1,0 +1,32 @@
+<div class="container">
+  <nav style="width: 100%;" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" >Market</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="/" routerLinkActive="activee" [routerLinkActiveOptions]="{exact:true}">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLinkActive="activee" routerLink="/admin" *ngIf="isUser">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLinkActive="activee" routerLink="/cart" *ngIf="isUser">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="activee"routerLink="/login"*ngIf="!isUser">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLinkActive="activee" routerLink="/sign"*ngIf="!isUser">Sign Up</a>
+        </li>
+        <button  (click)="logOut();logo()" class="btn btn-danger"*ngIf="isUser">Logout</button>
+
+      </ul>
+
+    </div>
+  </nav>
+
+</div>

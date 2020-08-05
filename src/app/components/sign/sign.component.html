@@ -1,0 +1,29 @@
+<div class="container">
+  <form #f="ngForm" (ngSubmit)="signUp(f)">
+    <h2 class="text-center">Sign Up</h2>
+    <input name="name" ngModel #n="ngModel" type="text" class="form-control" placeholder="Your Name" required>
+    <div class="alert alert-danger" role="alert" *ngIf="n.invalid&&n.touched">
+     Name is required
+    </div>
+    <input ngModel name="email" #e="ngModel" type="email" class="form-control" placeholder="Your Email" required email>
+    <div class="alert alert-danger" role="alert" *ngIf="e.errors?.required&&e.touched">
+      email is required
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="e.touched&&e.errors?.email">
+      Email must contain @example.com
+    </div>
+    <input ngModel name="password" #p="ngModel"  type="password" class="form-control" placeholder="Password" minlength="6" required>
+    <div class="alert alert-danger" role="alert" *ngIf="p.invalid&&p.touched">
+      Password is required
+    </div>
+    <input ngModel name="npassword" #pc="ngModel"  type="password" class="form-control" placeholder="Confirm Password">
+    <div class="alert alert-danger" role="alert" *ngIf="pc.touched&&p.value!==pc.value">
+      Confirm password is wrong
+    </div>
+    <button style="margin-bottom: 20px"  [disabled]="f.invalid||p.value!==pc.value" class="btn btn-primary">Submit</button>
+    <div class="alert alert-danger" *ngIf="errorMess">
+      {{this.errorMess}}
+    </div>
+  </form>
+
+</div>

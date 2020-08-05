@@ -1,0 +1,9 @@
+<div class="container">
+  <form style="margin-top: 50px" #f="ngForm" (ngSubmit)="addGoods(f)">
+    <h2 class="text-center">Add Goods</h2> <br>
+    <input type="text" placeholder="Name" ngModel name="name" class="form-control"> <br>
+    <input type="number" placeholder="Price"  ngModel name="price" class="form-control"> <br>
+    <input type="file" ngModel name="photo" #img> <br> <br>
+    <input type="submit" value="Add" class="btn btn-primary" [disabled]="f.invalid">
+  </form>
+</div>
